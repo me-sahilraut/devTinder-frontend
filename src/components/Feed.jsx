@@ -36,11 +36,11 @@ function Feed() {
 
   return (
     feed && (
-      <div className="flex justify-center my-10">
+      <div className="flex h-screen justify-center items-center">
         <UserCard user={feed[0]} />
       </div>
     )
   );
-};
+}
 
 export default Feed;

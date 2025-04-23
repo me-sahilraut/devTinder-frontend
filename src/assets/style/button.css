@@ -1,0 +1,348 @@
+button.accept {
+  --green: #1bfd9c;
+  font-size: 15px;
+  padding: 0.7em 2.7em;
+  letter-spacing: 0.06em;
+  position: relative;
+  font-family: inherit;
+  border-radius: 0.6em;
+  overflow: hidden;
+  transition: all 0.3s;
+  line-height: 1.4em;
+  border: 2px solid var(--green);
+  background: linear-gradient(
+    to right,
+    rgba(27, 253, 156, 0.1) 1%,
+    transparent 40%,
+    transparent 60%,
+    rgba(27, 253, 156, 0.1) 100%
+  );
+  color: var(--green);
+  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4),
+    0 0 9px 3px rgba(27, 253, 156, 0.1);
+}
+
+button.accept:hover {
+  color: #82ffc9;
+  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6),
+    0 0 9px 3px rgba(27, 253, 156, 0.2);
+}
+
+button.accept:before {
+  content: "";
+  position: absolute;
+  left: -4em;
+  width: 4em;
+  height: 100%;
+  top: 0;
+  transition: transform 0.4s ease-in-out;
+  background: linear-gradient(
+    to right,
+    transparent 1%,
+    rgba(27, 253, 156, 0.1) 40%,
+    rgba(27, 253, 156, 0.1) 60%,
+    transparent 100%
+  );
+}
+
+button.accept:hover:before {
+  transform: translateX(15em);
+}
+button.reject {
+  --green: #f25012;
+  font-size: 15px;
+  padding: 0.7em 2.7em;
+  letter-spacing: 0.06em;
+  position: relative;
+  font-family: inherit;
+  border-radius: 0.6em;
+  overflow: hidden;
+  transition: all 0.3s;
+  line-height: 1.4em;
+  border: 2px solid var(--green);
+  background: linear-gradient(
+    to right,
+    rgba(243, 78, 22, 0.1) 1%,
+    transparent 40%,
+    transparent 60%,
+    rgba(243, 78, 22, 0.1) 100%
+  );
+  color: var(--green);
+  box-shadow: inset 0 0 10px rgba(243, 78, 22, 0.4),
+    0 0 9px 3px rgba(243, 78, 22, 0.1);
+}
+
+button.reject:hover {
+  color: #f25012;
+  box-shadow: inset 0 0 10px rgba(243, 78, 22, 0.6),
+    0 0 9px 3px rgba(243, 78, 22, 0.2);
+}
+
+button.reject:before {
+  content: "";
+  position: absolute;
+  left: -4em;
+  width: 4em;
+  height: 100%;
+  top: 0;
+  transition: transform 0.4s ease-in-out;
+  background: linear-gradient(
+    to right,
+    transparent 1%,
+    rgba(243, 78, 22, 0.1) 40%,
+    rgba(243, 78, 22, 0.1) 60%,
+    transparent 100%
+  );
+}
+
+button.reject:hover:before {
+  transform: translateX(15em);
+}
+
+/* Chat button  */
+/* From Uiverse.io by kleenpulse - Chat Button Only */
+.chat-btn {
+  --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+  --border-width: 0.125em;
+  --curve-size: 0.5em;
+  --blur: 30px;
+  --bg: #080312;
+  --color: #afffff;
+  color: var(--color);
+  cursor: pointer;
+  position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  place-content: center;
+  padding: 0.5em 1.5em;
+  font-size: 17px;
+  border: 0;
+  text-transform: uppercase;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+  clip-path: polygon(
+    0% var(--curve-size),
+    var(--curve-size) 0,
+    100% 0,
+    100% calc(100% - var(--curve-size)),
+    calc(100% - var(--curve-size)) 100%,
+    0 100%
+  );
+  transition: color 250ms;
+}
+
+.chat-btn::before,
+.chat-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.chat-btn::before {
+  background: var(--border-color);
+  background-size: 300% 300%;
+  animation: move-bg7234 5s ease infinite;
+  z-index: -2;
+}
+
+@keyframes move-bg7234 {
+  0% {
+    background-position: 31% 0%;
+  }
+  50% {
+    background-position: 70% 100%;
+  }
+  100% {
+    background-position: 31% 0%;
+  }
+}
+
+.chat-btn::after {
+  background: var(--bg);
+  z-index: -1;
+  clip-path: polygon(
+    var(--border-width) calc(var(--curve-size) + var(--border-width) * 0.5),
+    calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    var(--border-width) calc(100% - var(--border-width))
+  );
+  transition: clip-path 500ms;
+}
+
+.chat-btn:hover::after,
+.chat-btn:focus::after {
+  clip-path: polygon(
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width))
+  );
+  transition: 200ms;
+}
+
+.chat-btn:hover,
+.chat-btn:focus {
+  color: #fff;
+}
+
+/* User card */
+/* From Uiverse.io by ElSombrero2 */
+.card {
+  overflow: visible;
+  /* width: 500px;
+  height: 500px; */
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 300ms;
+  box-shadow: 0px 0px 10px 1px #000000ee;
+  border-radius: 5px;
+  position: relative;
+}
+
+.front,
+.back {
+  background-color: #151515;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.back {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.back::before {
+  position: absolute;
+  content: " ";
+  display: block;
+  width: 160px;
+  height: 160%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ff9966,
+    #ff9966,
+    #ff9966,
+    #ff9966,
+    transparent
+  );
+  animation: rotation_481 5000ms infinite linear;
+}
+
+.back-content {
+  position: absolute;
+  width: 99%;
+  height: 99%;
+  background-color: #151515;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* gap: 30px; */
+}
+
+@keyframes rotation_481 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.front {
+  transform: rotateY(180deg);
+  color: white;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Save button */
+/* Save Button Style from Uiverse.io by Navarog21 */
+/* From Uiverse.io by Creatlydev */
+.saveProfile.btn {
+  line-height: 1;
+  text-decoration: none;
+  display: inline-flex;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--clr);
+  color: #fff;
+  border-radius: 10rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  padding-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.3s;
+}
+
+.saveProfile.btn:hover {
+  background-color: #000;
+}
+
+.saveProfile.btn .button__icon-wrapper {
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  color: var(--clr);
+  background-color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.saveProfile.btn:hover .button__icon-wrapper {
+  color: #000;
+}
+
+.saveProfile.btn .button__icon-svg--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+
+.saveProfile.btn:hover .button__icon-svg:first-child {
+  transition: transform 0.3s ease-in-out;
+  transform: translate(150%, -150%);
+}
+
+.saveProfile.btn:hover .button__icon-svg--copy {
+  transition: transform 0.3s ease-in-out 0.1s;
+  transform: translate(0);
+}
