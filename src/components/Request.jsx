@@ -10,7 +10,7 @@ const Requests = () => {
   const reviewRequest = async (status, _id) => {
     try {
       const res = axios.post(
-        "http://localhost:3000/request/review/" + status + "/" + _id,
+        "/api/request/review/" + status + "/" + _id,
         {},
         { withCredentials: true }
       );
@@ -20,12 +20,9 @@ const Requests = () => {
 
   const fetchRequests = async () => {
     try {
-      const res = await axios.get(
-        "http://localhost:3000/user/request/received",
-        {
-          withCredentials: true,
-        }
-      );
+      const res = await axios.get("/api/user/request/received", {
+        withCredentials: true,
+      });
 
       dispatch(addRequests(res.data.data));
     } catch (err) {}
@@ -94,7 +91,6 @@ min-h-[160px]    xl:min-w-[80px] xl:min-h-[80px] w-20 h-20 rounded-full ring-2 r
                 </button>
               </div>
             </div>
-            
           </>
         );
       })}
